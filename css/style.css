@@ -1,3 +1,8 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+
 /* Box Model Hack */
 * {
   box-sizing: border-box;
@@ -22,47 +27,173 @@
 /*******************************************/
 
 body {
-  background-color: rgb(103, 222, 255);
+  background: url(/images/bar.jpg) 0 0 no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 /******************************************
 /* LAYOUT
 /*******************************************/
 header {
-  background-color: white;
-  height: 40px;
+  background-color: #ddd1ff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  height: 50px;
+  filter: drop-shadow(2px 2px 2px black);
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header a {
+  font-size: 2rem;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
 }
 
 #main {
-  background-color: white;
+  background-color: #ddd1ff;
   border-radius: 20px;
-  width: 80%;
-  margin: 50px auto;
+  max-width: 60%;
+  margin: 100px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  filter: drop-shadow(5px 5px 10px black);
 }
 
 .contents {
   padding: 30px;
   text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+}
+
+.bartender {
+  height: 400px;
 }
 
 .resultList {
   list-style: none;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .resultList li {
-  padding: 5px 0;
+  background-color: white;;
+  margin: 5px;
+  padding: 20px;
+  border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 33.33%;
+  font-size: 1.5rem;
+}
+
+.resultList li img {
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+}
+
+.resultList li a {
+  text-decoration: none;
+  color: black;
+}
+
+.drinkIng {
+  list-style: none;
+  padding: 10px;
+}
+
+.searchField, .searchButton {
+  padding: 20px;
+  font-size: 2rem;
+  border: 2px solid black;
+}
+
+.searchButton {
+  transition: all 0.2s;
+}
+
+.searchButton:hover {
+  cursor: pointer;
+  background-color: darkgray
 }
 
 .drinkImage {
   height: 500px;
 }
 
+.drinkName, #main .contents h2 {
+  font-size: 2rem;
+}
+
+.drinkGlass, .drinkIng, .drinkInst {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: 'PT Mono', monospace;
+}
+
+.drinkInst {
+  margin: 0 auto;
+  width: 60%;
+}
 
 /******************************************
-/* ADDITIONAL STYLES
+/* MEDIA QUERIES
 /*******************************************/
+
+@media screen and (max-width: 500px) {
+  #main {
+    max-width: unset;
+    margin: 100px 20px;
+    padding: 5px;
+  }
+  #main .contents h2 {
+    font-size: 1.3rem;
+  }
+  .searchField, .searchButton {
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 2px solid black;
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+  #main {
+    max-width: unset;
+    margin: 100px 20px;
+    padding: 5px;
+  }
+  .searchField, .searchButton {
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 2px solid black;
+  }
+  .resultList li {
+    width: 100%;
+  }
+  .drinkImage {
+    height: 350px;
+  }
+  .drinkInst {
+    width: unset;
+  }
+}
