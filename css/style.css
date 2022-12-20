@@ -138,6 +138,7 @@ header a {
 
 .drinkImage {
   height: 500px;
+  border: 2px solid black;
 }
 
 .drinkName, #main .contents h2 {
